@@ -3,11 +3,14 @@ import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { LanguageTranslationModule } from './shared/modules/language-translation/language-translation.module';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AuthGuard } from './shared';
+import { UserComponent } from './domain/user/user.component';
+import { RestaurantComponent } from './domain/restaurant/restaurant.component';
+import { MealComponent } from './domain/meal/meal.component';
+import { CardComponent } from './domain/card/card.component';
+import { AddressComponent } from './domain/address/address.component';
 
 @NgModule({
     imports: [
@@ -15,10 +18,9 @@ import { AuthGuard } from './shared';
         BrowserModule,
         BrowserAnimationsModule,
         HttpClientModule,
-        LanguageTranslationModule,
         AppRoutingModule
     ],
-    declarations: [AppComponent],
+    declarations: [AppComponent, UserComponent, RestaurantComponent, MealComponent, CardComponent, AddressComponent],
     providers: [AuthGuard],
     bootstrap: [AppComponent]
 })
