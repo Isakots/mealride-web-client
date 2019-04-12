@@ -33,7 +33,6 @@ export class SidebarComponent implements OnInit {
         this.pushRightClass = 'push-right';
     }
 
-
     eventCalled() {
         this.isActive = !this.isActive;
     }
@@ -43,12 +42,14 @@ export class SidebarComponent implements OnInit {
             this.showMenu = '0';
         } else {
             this.showMenu = element;
+            this.collapsed = false;
         }
     }
 
     toggleCollapsed() {
         this.collapsed = !this.collapsed;
         this.collapsedEvent.emit(this.collapsed);
+        this.showMenu = '0';
     }
 
     isToggled(): boolean {
@@ -61,10 +62,6 @@ export class SidebarComponent implements OnInit {
         dom.classList.toggle(this.pushRightClass);
     }
 
-    rltAndLtr() {
-        const dom: any = document.querySelector('body');
-        dom.classList.toggle('rtl');
-    }
     onLoggedout() {
         localStorage.removeItem('isLoggedin');
     }

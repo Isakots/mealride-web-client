@@ -6,11 +6,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AuthGuard } from './shared';
-import { UserComponent } from './domain/user/user.component';
-import { RestaurantComponent } from './domain/restaurant/restaurant.component';
-import { MealComponent } from './domain/meal/meal.component';
-import { CardComponent } from './domain/card/card.component';
-import { AddressComponent } from './domain/address/address.component';
 
 @NgModule({
     imports: [
@@ -20,7 +15,7 @@ import { AddressComponent } from './domain/address/address.component';
         HttpClientModule,
         AppRoutingModule
     ],
-    declarations: [AppComponent, UserComponent, RestaurantComponent, MealComponent, CardComponent, AddressComponent],
+    declarations: [AppComponent],
     providers: [AuthGuard],
     bootstrap: [AppComponent]
 })

@@ -9,31 +9,25 @@
       <li class="nested" [class.expand]="showMenu === 'usermenu'">
         <ul class="submenu">
           <li>
-            <a href="javascript:void(0)">
+            <a routerLink="/profile" [routerLinkActive]="['router-link-active']" href="javascript:void(0)">
               <i class="fa fa-monument"></i>&nbsp;
               <span>{{ 'Personal Data' }}</span>
             </a>
           </li>
           <li>
-            <a href="javascript:void(0)">
-              <i class="fa fa-monument"></i>&nbsp;
-              <span>{{ 'Change password' }}</span>
-            </a>
-          </li>
-          <li>
-            <a href="javascript:void(0)">
+            <a routerLink="/addresses" [routerLinkActive]="['router-link-active']" href="javascript:void(0)">
               <i class="fa fa-monument"></i>&nbsp;
               <span>{{ 'Addresses' }}</span>
             </a>
           </li>
           <li>
-            <a href="javascript:void(0)">
+            <a routerLink="/cards" [routerLinkActive]="['router-link-active']" href="javascript:void(0)">
               <i class="fa fa-monument"></i>&nbsp;
               <span>{{ 'Credit Cards' }}</span>
             </a>
           </li>
           <li>
-            <a href="javascript:void(0)">
+            <a routerLink="/orders" [routerLinkActive]="['router-link-active']" href="javascript:void(0)">
               <i class="fa fa-monument"></i>&nbsp;
               <span>{{ 'Previous Orders'  }}</span>
             </a>
@@ -42,7 +36,7 @@
       </li>
     </div>
 
-    <div class="nested-menu">
+      <div class="nested-menu">
       <a class="list-group-item" (click)="addExpandClass('restaurantmenu')">
         <i class="fa fa-shopping-cart"></i>&nbsp;
         <span>{{ 'Trófea Grill Étterem' }}</span>
@@ -50,25 +44,25 @@
       <li class="nested" [class.expand]="showMenu === 'restaurantmenu'">
         <ul class="submenu">
           <li>
-            <a href="javascript:void(0)">
+            <a routerLink="/restaurant/incoming-orders" [routerLinkActive]="['router-link-active']" href="javascript:void(0)">
               <i class="fa fa-monument"></i>&nbsp;
               <span>{{ 'Incoming Orders' }}</span>
             </a>
           </li>
           <li>
-            <a href="javascript:void(0)">
+            <a routerLink="/restaurant/menu" [routerLinkActive]="['router-link-active']" href="javascript:void(0)">
               <i class="fa fa-monument"></i>&nbsp;
               <span>{{ 'Menu' }}</span>
             </a>
           </li>
           <li>
-            <a href="javascript:void(0)">
+            <a routerLink="/restaurant/workers" [routerLinkActive]="['router-link-active']" href="javascript:void(0)">
               <i class="fa fa-monument"></i>&nbsp;
               <span>{{ 'Manage Workers' }}</span>
             </a>
           </li>
           <li>
-            <a href="javascript:void(0)">
+            <a routerLink="/restaurant/previous-orders" [routerLinkActive]="['router-link-active']" href="javascript:void(0)">
               <i class="fa fa-monument"></i>&nbsp;
               <span>{{ 'Previous Orders'  }}</span>
             </a>
@@ -76,20 +70,51 @@
           <li>
             <a href="javascript:void(0)">
               <i class="fa fa-monument"></i>&nbsp;
-              <span>{{ 'Logs' }}</span>
+              <span>{{ 'Restaurant Logs' }}</span>
             </a>
           </li>
         </ul>
       </li>
     </div>
-    <a [routerLink]="['/login']" (click)="onLoggedout()" [routerLinkActive]="['router-link-active']" class="list-group-item">
+
+    <div class="nested-menu">
+      <a class="list-group-item" (click)="addExpandClass('adminmenu')">
+        <i class="fa fa-sticky-note"></i>&nbsp;
+        <span>{{ 'Administration' }}</span>
+      </a>
+      <li class="nested" [class.expand]="showMenu === 'adminmenu'">
+        <ul class="submenu">
+          <li>
+            <a routerLink="/administration/restaurants" [routerLinkActive]="['router-link-active']" href="javascript:void(0)">
+              <i class="fa fa-monument"></i>&nbsp;
+              <span>{{ 'Restaurants' }}</span>
+            </a>
+          </li>
+          <li>
+            <a routerLink="/administration/new-restaurant" [routerLinkActive]="['router-link-active']" href="javascript:void(0)">
+              <i class="fa fa-monument"></i>&nbsp;
+              <span>{{ 'New Restaurant' }}</span>
+            </a>
+          </li>
+          <li>
+            <a routerLink="/administration/logs" [routerLinkActive]="['router-link-active']" href="javascript:void(0)">
+              <i class="fa fa-monument"></i>&nbsp;
+              <span>{{ 'Application Logs' }}</span>
+            </a>
+          </li>
+        </ul>
+      </li>
+    </div>
+
+
+    <a [routerLink]="['/']" (click)="onLoggedout()" class="list-group-item">
       <i class="fa fa-fw fa-power-off"></i>&nbsp;
       <span>{{ 'Logout' }}</span>
     </a>
-    <a routerLink="/dashboard" [routerLinkActive]="['router-link-active']" class="list-group-item">
+    <!--a routerLink="/dashboard" [routerLinkActive]="['router-link-active']" class="list-group-item">
       <i class="fa fa-fw fa-dashboard"></i>&nbsp;
       <span>{{ 'Dashboard' }}</span>
-    </a>
+    </a-->
 
   </div>
   <div class="toggle-button" [ngClass]="{collapsed: collapsed}" (click)="toggleCollapsed()">

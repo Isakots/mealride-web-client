@@ -1,47 +1,87 @@
-<nav class="navbar navbar-expand-lg fixed-top">
-    <a class="navbar-brand" href="#">Welcome to MealRide!</a>
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+
+    <a class="navbar-brand">
+      <img src="/favicon.ico" width="30" height="30" alt="">
+    </a>
+    <a class="navbar-brand" href="/">MealRide</a>
+
     <button class="navbar-toggler" type="button" (click)="toggleSidebar()">
-        <!-- <span class="navbar-toggler-icon"></span> -->
+        <!--<span class="navbar-toggler-icon"></span> -->
         <i class="fa fa-bars text-muted" aria-hidden="true"></i>
     </button>
 
 
-    <div class="collapse navbar-collapse">
+    <div class="collapse navbar-collapse" id="navbarResponsive">
 
         <ul class="navbar-nav ml-auto">
             <li class="nav-item">
-              <a class="nav-link"
-                 href="@{/registration}">Registration</a>
+              <a class="nav-link" routerLink="/signup">Registration</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link"
-                 href="@{/restaurant}">Restaurants</a>
+              <a class="nav-link" routerLink="/restaurants">Restaurants</a>
             </li>
 
             <li class="nav-item">
-              <a class="nav-link"
-                 href="@{/login}">Sign In</a>
+              <a class="nav-link" routerLink="/login">Sign In</a>
+            </li>
+            <li class="nav-item dropdown" ngbDropdown>
+              <a href="javascript:void(0)" class="nav-link" ngbDropdownToggle>
+                Administration
+              </a>
+              <div class="dropdown-menu" ngbDropdownMenu>
+                <a routerLink="/administration/restaurants" class="dropdown-item" href="javascript:void(0)">
+                  {{ 'Restaurants'}}
+                </a>
+                <a routerLink="/administration/new-restaurant" class="dropdown-item" href="javascript:void(0)">
+                  {{ 'New Restaurant'}}
+                </a>
+                <a routerLink="/administration/logs" class="dropdown-item" href="javascript:void(0)">
+                  {{ 'Application Logs'}}
+                </a>
+              </div>
+            </li>
+            <li class="nav-item dropdown" ngbDropdown>
+              <a  href="javascript:void(0)" class="nav-link" ngbDropdownToggle>
+                Étterem
+              </a>
+              <div class="dropdown-menu" ngbDropdownMenu>
+                <a routerLink="/restaurant/incoming-orders" class="dropdown-item" href="javascript:void(0)">
+                  {{ 'Incoming Orders'}}
+                </a>
+                <a routerLink="/restaurant/menu" class="dropdown-item" href="javascript:void(0)">
+                  {{ 'Menu'}}
+                </a>
+                <div class="dropdown-divider"></div>
+                <a routerLink="/restaurant/workers" class="dropdown-item" href="javascript:void(0)">
+                  {{ 'Manage Workers'}}
+                </a>
+                <a routerLink="/restaurant/previous-orders" class="dropdown-item" href="javascript:void(0)">
+                  {{ 'Previous Orders'}}
+                </a>
+                <div class="dropdown-divider"></div>
+                <a routerLink="/restaurant/logs" class="dropdown-item" href="javascript:void(0)">
+                  {{ 'Restaurant Logs'}}
+                </a>
+              </div>
             </li>
             <li class="nav-item dropdown" ngbDropdown>
                 <a href="javascript:void(0)" class="nav-link" ngbDropdownToggle>
                     Csókási Marcell <b class="caret"></b>
                 </a>
-                <div class="dropdown-menu-right" ngbDropdownMenu>
-                    <a class="dropdown-item" href="javascript:void(0)">
+                <div class="dropdown-menu" ngbDropdownMenu>
+                    <a routerLink="/profile" class="dropdown-item" href="javascript:void(0)">
                        {{ 'Personal Data'}}
                     </a>
-                    <a class="dropdown-item" href="javascript:void(0)">
-                      {{ 'Change password'}}
-                    </a>
-                    <a class="dropdown-item" href="javascript:void(0)">
+                    <a routerLink="/addresses" class="dropdown-item" href="javascript:void(0)">
                        {{ 'Addresses'}}
                     </a>
-                    <a class="dropdown-item" href="javascript:void(0)">
+                    <a routerLink="/cards" class="dropdown-item" href="javascript:void(0)">
                       {{ 'Credit Cards'}}
                     </a>
-                    <a class="dropdown-item" href="javascript:void(0)">
+                    <a routerLink="/orders" class="dropdown-item" href="javascript:void(0)">
                      {{ 'Previous Orders'}}
                     </a>
+                    <div class="dropdown-divider"></div>
                     <a class="dropdown-item" [routerLink]="['/login']" (click)="onLoggedout()">
                        {{ 'Log Out' }}
                     </a>
@@ -51,3 +91,4 @@
         </ul>
     </div>
 </nav>
+
