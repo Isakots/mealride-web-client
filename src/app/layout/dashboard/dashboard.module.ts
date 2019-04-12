@@ -6,8 +6,7 @@ import { DashboardRoutingModule } from './dashboard-routing.module';
 import { DashboardComponent } from './dashboard.component';
 import {
     TimelineComponent,
-    NotificationComponent,
-    ChatComponent
+    NotificationComponent
 } from './components';
 import { StatModule } from '../../shared';
 
@@ -22,8 +21,7 @@ import { StatModule } from '../../shared';
     declarations: [
         DashboardComponent,
         TimelineComponent,
-        NotificationComponent,
-        ChatComponent
+        NotificationComponent
     ]
 })
 export class DashboardModule {}
