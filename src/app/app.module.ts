@@ -1,6 +1,8 @@
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms'; // <-- NgModel lives here
+
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
@@ -11,6 +13,7 @@ import { AuthGuard } from './shared';
     imports: [
         CommonModule,
         BrowserModule,
+        FormsModule,
         BrowserAnimationsModule,
         HttpClientModule,
         AppRoutingModule
