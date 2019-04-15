@@ -6,16 +6,16 @@
             <form role="form">
                 <div class="form-content">
                     <div class="form-group">
-                        <input type="text" [(ngModel)]="email" [ngModelOptions]="{standalone: true}" class="form-control input-underline input-lg" id="email" placeholder="{{ 'Email'}}">
+                        <input type="text" placeholder='Email' [(ngModel)]="email" [ngModelOptions]="{standalone: true}" class="form-control input-lg" id="email" >
                     </div>
-
                     <div class="form-group">
-                        <input type="password" [(ngModel)]="password" [ngModelOptions]="{standalone: true}" class="form-control input-underline input-lg" id="password" placeholder="{{ 'Password' }}">
+                        <input type="password" placeholder="{{ 'Password' }}" [(ngModel)]="password" [ngModelOptions]="{standalone: true}" class="form-control input-lg" id="password" >
                     </div>
                 </div>
-                <a class="btn rounded-btn" [routerLink]="['/']" (click)="onLoggedin()">{{ 'Log in'}}</a>
-                &nbsp;
-                <a class="btn rounded-btn" [routerLink]="['/signup']">{{ 'Register' }}</a>
+              <div>
+                <button mat-raised-button [routerLink]="['/']" (click)="onLoggedin()">Log In</button>
+                <button mat-raised-button [routerLink]="['/signup']">Sign Up</button>
+              </div>
             </form>
         </div>
     </div>
