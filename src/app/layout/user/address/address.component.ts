@@ -12,11 +12,15 @@ import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 export class AddressComponent implements OnInit {
   displayedColumns: string[] =
     ['zipcode', 'state', 'city', 'street', 'housenumber', 'modify', 'delete'];
-  addresses: Address[];
+  addresses: Address[] = [];
+  dataSource: Address[];
   selectedAddress: Address;
   formGroup: FormGroup;
 
-  constructor(private _formBuilder: FormBuilder, private addressService: AddressService) {
+
+  constructor(private _formBuilder: FormBuilder,
+              private addressService: AddressService
+  ) {
   }
 
   ngOnInit() {
@@ -34,13 +38,17 @@ export class AddressComponent implements OnInit {
 
   getAddresses(): void {
     this.addressService.getAddresses()
-      .subscribe(addresses => this.addresses = addresses);
+      .subscribe(addresses => {
+        this.addresses = addresses;
+        this.refresh();
+      });
   }
 
   addAddress(address: Address): void {
     this.addressService.addAddress(address)
       .subscribe(newAddress => {
         this.addresses.push(newAddress);
+        this.refresh();
       });
   }
 
@@ -48,6 +56,7 @@ export class AddressComponent implements OnInit {
     this.addressService.updateAddress(address)
       .subscribe(newAddress => {
         this.addresses.push(newAddress);
+        this.refresh();
       });
   }
 
@@ -58,6 +67,10 @@ export class AddressComponent implements OnInit {
 
   onModify(address: Address): void {
     this.selectedAddress = address;
+  }
+
+  refresh() {
+    this.dataSource = [...this.addresses];
   }
 
   onDelete(address: Address): void {
