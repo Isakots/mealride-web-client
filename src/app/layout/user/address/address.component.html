@@ -1,4 +1,8 @@
-<div class="col col-xl-8">
+<div class="col col-xl-9">
+
+  <h2>Addresses</h2>
+  <hr>
+
   <table mat-table [dataSource]="addresses" class="mat-elevation-z8">
 
     <!--- Note that these columns can be defined in any order.
@@ -53,3 +57,68 @@
     <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
   </table>
 </div>
+
+<div style="margin-top: 20px; margin-left: 20px;">
+  <button mat-raised-button (click)="onAddNew()">Add new</button>
+</div>
+
+<div class="col col-xl-9">
+  <div *ngIf="selectedAddress">
+
+    <form class="form-container" [formGroup]="formGroup">
+
+      <mat-form-field>
+        <input matInput placeholder="City" [value]="selectedAddress.city" formControlName="cityCtrl" required>
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-select placeholder="Select" formControlName="stateCtrl" [value]="selectedAddress.state" required>
+          <mat-option value="Bács-Kiskun megye" selected>Bács-Kiskun megye</mat-option>
+          <mat-option value="Baranya megye">Baranya megye</mat-option>
+          <mat-option value="Békés megye">Békés megye</mat-option>
+          <mat-option value="Borsod-Abaúj-Zemplén megye">Borsod-Abaúj-Zemplén megye</mat-option>
+          <mat-option value="Budapest">Budapest</mat-option>
+          <mat-option value="Csongrád megye">Csongrád megye</mat-option>
+          <mat-option value="Fejér megye">Fejér megye</mat-option>
+          <mat-option value="Győr-Moson-Sopron megye">Győr-Moson-Sopron megye</mat-option>
+          <mat-option value="Hajdú-Bihar megye">Hajdú-Bihar megye</mat-option>
+          <mat-option value="Heves megye">Heves megye</mat-option>
+          <mat-option value="Jász-Nagykun-Szolnok megye">Jász-Nagykun-Szolnok megye</mat-option>
+          <mat-option value="Komárom-Esztergom megye">Komárom-Esztergom megye</mat-option>
+          <mat-option value="Nógrád megye">Nógrád megye</mat-option>
+          <mat-option value="Pest megye">Pest megye</mat-option>
+          <mat-option value="Somogy megye">Somogy megye</mat-option>
+          <mat-option value="Szabolcs-Szatmár-Bereg megye">Szabolcs-Szatmár-Bereg megye</mat-option>
+          <mat-option value="Tolna megye">Tolna megye</mat-option>
+          <mat-option value="Vas megye">Vas megye</mat-option>
+          <mat-option value="Veszprém megye">Veszprém megye</mat-option>
+          <mat-option value="Zala megye">Zala megye</mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <mat-form-field>
+        <input matInput placeholder="ZipCode" formControlName="zipCodeCtrl" [value]="selectedAddress.zipcode" required>
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput placeholder="Street" formControlName="streetCtrl" [value]="selectedAddress.street" required>
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput placeholder="House Number" formControlName="houseNumberCtrl"
+               [value]="selectedAddress.housenumber" required>
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput placeholder="Floor" formControlName="floorCtrl" [value]="selectedAddress.floor">
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput placeholder="Door" formControlName="doorCtrl" [value]="selectedAddress.door">
+      </mat-form-field>
+
+      <div style="margin-top: 20px; margin-left: 20px;">
+        <button mat-raised-button (click)="onSave()">Save</button>
+      </div>
+
+    </form>
+
+  </div>
+</div>
+

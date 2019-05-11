@@ -33,7 +33,7 @@ export class AddressService {
       );
   }
 
-  /** POST: add a new hero to the server */
+  /** POST: add a new address to the server */
   addAddress(address: Address): Observable<Address> {
     return this.http.post<Address>(ADDRESS_URL, address, httpOptions).pipe(
       tap((newAddress: Address) => this.log(`added address w/ id=${newAddress.id}`)),
@@ -42,10 +42,10 @@ export class AddressService {
   }
 
   /** PUT: update the address on the server */
-  updateAddress(address: Address): Observable<any> {
+  updateAddress(address: Address): Observable<Address> {
     return this.http.put(ADDRESS_URL, address, httpOptions).pipe(
-      tap(_ => this.log(`updated address id=${address.id}`)),
-      catchError(this.handleError<any>('updateAddress'))
+      tap((updatedAddress: Address) => this.log(`updated address id=${updatedAddress.id}`)),
+      catchError(this.handleError<Address>('updateAddress'))
     );
   }
 

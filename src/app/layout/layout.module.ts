@@ -9,12 +9,24 @@ import {HeaderComponent} from './components/header/header.component';
 import {RestaurantComponent} from './restaurant/restaurant/restaurant.component';
 import {MealComponent} from './restaurant/meal/meal.component';
 import {CardComponent} from './user/card/card.component';
+import {AddressFormComponent} from "./user/address-form/address-form.component";
+import {MatButtonModule, MatFormFieldModule, MatInputModule, MatSelectModule} from "@angular/material";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 
 @NgModule({
   imports: [
     CommonModule,
     LayoutRoutingModule,
-    NgbDropdownModule
+    NgbDropdownModule,
+    MatFormFieldModule,
+    MatButtonModule,
+    MatInputModule,
+    MatSelectModule,
+    ReactiveFormsModule,
+    FormsModule
+  ],
+  exports: [
+    AddressFormComponent
   ],
   declarations: [
     LayoutComponent,
@@ -23,6 +35,7 @@ import {CardComponent} from './user/card/card.component';
     RestaurantComponent,
     MealComponent,
     CardComponent,
+    AddressFormComponent,
   ]
 })
 export class LayoutModule {
