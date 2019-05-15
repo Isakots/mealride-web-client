@@ -62,7 +62,7 @@ export class AddressComponent implements OnInit {
 
   deleteAddress(address: Address): void {
     this.addresses = this.addresses.filter(h => h !== address);
-    this.addressService.deleteAddress(address.id).subscribe();
+    this.addressService.deleteAddress(address.id).subscribe(() => this.refresh());
   }
 
   onModify(address: Address): void {

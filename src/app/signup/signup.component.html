@@ -1,91 +1,94 @@
 <div class="login-page" [@routerTransition]>
   <div class="row justify-content-xl-center">
     <div class="col-xl-8">
-      <img class="user-avatar" src="assets/images/logo.png" width="150px" />
+      <img class="user-avatar" src="assets/images/logo.png" width="150px"/>
       <h1>Registration</h1>
-        <mat-horizontal-stepper [linear]="false" #stepper>
-          <mat-step [stepControl]="firstFormGroup">
-            <form class="form-container" [formGroup]="firstFormGroup">
-              <ng-template matStepLabel>Fill out your personal information</ng-template>
-                <mat-form-field>
-                   <input matInput placeholder="First name" formControlName="firstNameCtrl" required>
-                </mat-form-field>
-                <mat-form-field>
-                   <input matInput placeholder="Last name" formControlName="lastNameCtrl" required>
-                </mat-form-field>
-                <mat-form-field>
-                   <input matInput placeholder="Email" formControlName="emailCtrl" required>
-                 </mat-form-field>
-                 <mat-form-field>
-                   <input matInput placeholder="Password" formControlName="passwordCtrl" required >
-                 </mat-form-field>
-                 <mat-form-field>
-                    <input matInput placeholder="Repeat Password" formControlName="password2Ctrl" required >
-                 </mat-form-field>
+      <mat-horizontal-stepper [linear]="false" #stepper>
+        <mat-step [stepControl]="firstFormGroup">
+          <form class="form-container" [formGroup]="firstFormGroup">
+            <ng-template matStepLabel>Fill out your personal information</ng-template>
+            <mat-form-field>
+              <input matInput placeholder="First name" formControlName="firstNameCtrl" required>
+            </mat-form-field>
+            <mat-form-field>
+              <input matInput placeholder="Last name" formControlName="lastNameCtrl" required>
+            </mat-form-field>
+            <mat-form-field>
+              <input matInput placeholder="Email" formControlName="emailCtrl" required>
+            </mat-form-field>
+            <mat-form-field>
+              <input matInput placeholder="Phone" formControlName="phoneCtrl" required>
+            </mat-form-field>
+            <mat-form-field>
+              <input type="password" matInput placeholder="Password" formControlName="passwordCtrl" required>
+            </mat-form-field>
+            <mat-form-field>
+              <input type="password" matInput placeholder="Repeat Password" formControlName="password2Ctrl" required>
+            </mat-form-field>
 
-              <div>
-                <button mat-raised-button [routerLink]="['/login']" >Back to LogIn</button>
-                <button mat-raised-button matStepperNext>Next</button>
-              </div>
-            </form>
-          </mat-step>
-          <mat-step [stepControl]="secondFormGroup">
-            <form class="form-container" [formGroup]="secondFormGroup">
-              <ng-template matStepLabel>Fill out your address</ng-template>
+            <div>
+              <button mat-raised-button [routerLink]="['/login']">Back to LogIn</button>
+              <button mat-raised-button matStepperNext>Next</button>
+            </div>
+          </form>
+        </mat-step>
+        <mat-step [stepControl]="secondFormGroup">
+          <form class="form-container" [formGroup]="secondFormGroup">
+            <ng-template matStepLabel>Fill out your address</ng-template>
 
-              <mat-form-field>
-                  <input matInput placeholder="City" formControlName="cityCtrl" required>
-              </mat-form-field>
+            <mat-form-field>
+              <input matInput placeholder="City" formControlName="cityCtrl" required>
+            </mat-form-field>
 
-              <mat-form-field>
-                  <mat-select placeholder="Select" formControlName="stateCtrl">
-                    <mat-option value="Bács-Kiskun megye" selected>Bács-Kiskun megye</mat-option>
-                    <mat-option value="Baranya megye">Baranya megye</mat-option>
-                    <mat-option value="Békés megye">Békés megye</mat-option>
-                    <mat-option value="Borsod-Abaúj-Zemplén megye">Borsod-Abaúj-Zemplén megye</mat-option>
-                    <mat-option value="Budapest">Budapest</mat-option>
-                    <mat-option value="Csongrád megye">Csongrád megye</mat-option>
-                    <mat-option value="Fejér megye">Fejér megye</mat-option>
-                    <mat-option value="Győr-Moson-Sopron megye">Győr-Moson-Sopron megye</mat-option>
-                    <mat-option value="Hajdú-Bihar megye">Hajdú-Bihar megye</mat-option>
-                    <mat-option value="Heves megye">Heves megye</mat-option>
-                    <mat-option value="Jász-Nagykun-Szolnok megye">Jász-Nagykun-Szolnok megye</mat-option>
-                    <mat-option value="Komárom-Esztergom megye">Komárom-Esztergom megye</mat-option>
-                    <mat-option value="Nógrád megye">Nógrád megye</mat-option>
-                    <mat-option value="Pest megye">Pest megye</mat-option>
-                    <mat-option value="Somogy megye">Somogy megye</mat-option>
-                    <mat-option value="Szabolcs-Szatmár-Bereg megye">Szabolcs-Szatmár-Bereg megye</mat-option>
-                    <mat-option value="Tolna megye">Tolna megye</mat-option>
-                    <mat-option value="Vas megye">Vas megye</mat-option>
-                    <mat-option value="Veszprém megye">Veszprém megye</mat-option>
-                    <mat-option value="Zala megye">Zala megye</mat-option>
-                  </mat-select>
-              </mat-form-field>
+            <mat-form-field>
+              <mat-select placeholder="Select" formControlName="stateCtrl">
+                <mat-option value="Bács-Kiskun megye" selected>Bács-Kiskun megye</mat-option>
+                <mat-option value="Baranya megye">Baranya megye</mat-option>
+                <mat-option value="Békés megye">Békés megye</mat-option>
+                <mat-option value="Borsod-Abaúj-Zemplén megye">Borsod-Abaúj-Zemplén megye</mat-option>
+                <mat-option value="Budapest">Budapest</mat-option>
+                <mat-option value="Csongrád megye">Csongrád megye</mat-option>
+                <mat-option value="Fejér megye">Fejér megye</mat-option>
+                <mat-option value="Győr-Moson-Sopron megye">Győr-Moson-Sopron megye</mat-option>
+                <mat-option value="Hajdú-Bihar megye">Hajdú-Bihar megye</mat-option>
+                <mat-option value="Heves megye">Heves megye</mat-option>
+                <mat-option value="Jász-Nagykun-Szolnok megye">Jász-Nagykun-Szolnok megye</mat-option>
+                <mat-option value="Komárom-Esztergom megye">Komárom-Esztergom megye</mat-option>
+                <mat-option value="Nógrád megye">Nógrád megye</mat-option>
+                <mat-option value="Pest megye">Pest megye</mat-option>
+                <mat-option value="Somogy megye">Somogy megye</mat-option>
+                <mat-option value="Szabolcs-Szatmár-Bereg megye">Szabolcs-Szatmár-Bereg megye</mat-option>
+                <mat-option value="Tolna megye">Tolna megye</mat-option>
+                <mat-option value="Vas megye">Vas megye</mat-option>
+                <mat-option value="Veszprém megye">Veszprém megye</mat-option>
+                <mat-option value="Zala megye">Zala megye</mat-option>
+              </mat-select>
+            </mat-form-field>
 
 
-              <mat-form-field>
-                <input matInput placeholder="ZipCode" formControlName="zipCodeCtrl" required>
-              </mat-form-field>
-              <mat-form-field>
-                <input matInput placeholder="Street" formControlName="streetCtrl" required>
-              </mat-form-field>
-              <mat-form-field>
-                <input matInput placeholder="House Number" formControlName="houseNumberCtrl" required >
-              </mat-form-field>
-              <mat-form-field>
-                <input matInput placeholder="Floor" formControlName="floorCtrl">
-              </mat-form-field>
-              <mat-form-field>
-                <input matInput placeholder="Door" formControlName="doorCtrl">
-              </mat-form-field>
-
-              <div>
-                <button mat-raised-button matStepperPrevious>Back</button>
-                <button mat-raised-button matStepperNext>Sign Up</button>
-              </div>
-            </form>
-          </mat-step>
-        </mat-horizontal-stepper>
+            <mat-form-field>
+              <input matInput placeholder="ZipCode" formControlName="zipCodeCtrl" required>
+            </mat-form-field>
+            <mat-form-field>
+              <input matInput placeholder="Street" formControlName="streetCtrl" required>
+            </mat-form-field>
+            <mat-form-field>
+              <input matInput placeholder="House Number" formControlName="houseNumberCtrl" required>
+            </mat-form-field>
+            <mat-form-field>
+              <input matInput placeholder="Floor" formControlName="floorCtrl">
+            </mat-form-field>
+            <mat-form-field>
+              <input matInput placeholder="Door" formControlName="doorCtrl">
+            </mat-form-field>
+            <app-messages></app-messages>
+            <div>
+              <button mat-raised-button matStepperPrevious>Back</button>
+              <button mat-raised-button matStepperNext (click)="onSignUp()">Sign Up</button>
+            </div>
+          </form>
+        </mat-step>
+      </mat-horizontal-stepper>
 
     </div>
   </div>

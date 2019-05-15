@@ -1,4 +1,4 @@
-export class Card {
+export class CreditCard {
   id: number;
   cardnumber: string;
   ownername: string;

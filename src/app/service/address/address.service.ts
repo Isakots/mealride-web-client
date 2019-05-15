@@ -21,7 +21,6 @@ const httpOptions = {
 export class AddressService {
 
   constructor(private http: HttpClient, private messageService: MessageService) {
-
   }
 
   /** GET addresses from the server */

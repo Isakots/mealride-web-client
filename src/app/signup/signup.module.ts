@@ -1,10 +1,11 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import {NgModule} from '@angular/core';
+import {CommonModule} from '@angular/common';
 
-import { SignupRoutingModule } from './signup-routing.module';
-import { SignupComponent } from './signup.component';
-import {MatInputModule, MatListModule, MatStepperModule, MatButtonModule, MatSelectModule} from '@angular/material';
+import {SignupRoutingModule} from './signup-routing.module';
+import {SignupComponent} from './signup.component';
+import {MatButtonModule, MatInputModule, MatListModule, MatSelectModule, MatStepperModule} from '@angular/material';
 import {ReactiveFormsModule} from '@angular/forms';
+import {MessagesComponent} from "../messages/messages.component";
 
 @NgModule({
   imports: [
@@ -17,6 +18,6 @@ import {ReactiveFormsModule} from '@angular/forms';
     MatButtonModule,
     MatSelectModule
   ],
-  declarations: [SignupComponent]
+  declarations: [SignupComponent, MessagesComponent]
 })
 export class SignupModule { }
